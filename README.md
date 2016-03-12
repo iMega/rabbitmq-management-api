@@ -1,9 +1,18 @@
 # Rabman
 
-A simple object oriented wrapper for the RabbitMQ Management HTTP Api.
+A simple object oriented wrapper for the [RabbitMQ](https://www.rabbitmq.com) Management HTTP Api.
+
+## Installation
+
+Installable through composer via:
+
+```
+$ composer require iMega/rabbitmq-management-api
+```
 
 ## Table of Contents
 
+ * [Installation](#installation)
  * [Modificators](#modificators)
  * [Overview](#overview)
  * [Cluster](#cluster)
@@ -363,7 +372,7 @@ foreach ($items as $item) {
 }
 ```
 
-To create a queue, you will need the parameters looking something like this (All keys are optional): 
+To create a queue, you will need the parameters looking something like this (All keys are optional):
 
 ```
 $source->queues('name-queue')->vhost('second_virtual_host')->create([
@@ -404,7 +413,7 @@ $source->queues('example.queues')->vhost('second_virtual_host')->actions([
 ```
 Currently the actions which are supported are sync and cancel_sync.
 
-Get messages from a queue. 
+Get messages from a queue.
 
 ```
 $items = $source->queues('name-queue')->vhost('second_virtual_host')->get([
@@ -423,7 +432,7 @@ foreach ($items as $item) {
 
 truncate is optional; all other keys are mandatory.
 
-Please note that the get path in the HTTP API is intended for diagnostics etc - it does not implement reliable delivery and so should be treated as a sysadmin's tool rather than a general API for messaging. 
+Please note that the get path in the HTTP API is intended for diagnostics etc - it does not implement reliable delivery and so should be treated as a sysadmin's tool rather than a general API for messaging.
 
 [Back to TOC](#table-of-contents)
 
@@ -456,7 +465,7 @@ foreach ($items as $item) {
 }
 ```
 
-Remember, an exchange and a queue can be bound together many times! To create a new binding, POST to this URI. You will need a body looking something like this: 
+Remember, an exchange and a queue can be bound together many times! To create a new binding, POST to this URI. You will need a body looking something like this:
 
 ```
 $source->bindings()->vhost('second_virtual_host')->exchange('name')->queue('name')->create([
@@ -575,7 +584,7 @@ $source->users('name')->create([
 ]);
 ```
 
-The tags key is mandatory. Either password or password_hash must be set. Setting password_hash to "" will ensure the user cannot use a password to log in. tags is a comma-separated list of tags for the user. Currently recognised tags are "administrator", "monitoring" and "management". 
+The tags key is mandatory. Either password or password_hash must be set. Setting password_hash to "" will ensure the user cannot use a password to log in. tags is a comma-separated list of tags for the user. Currently recognised tags are "administrator", "monitoring" and "management".
 
 and delete a user
 
@@ -683,7 +692,7 @@ foreach ($items as $item) {
 }
 ```
 
-To create a parameter, you will need the parameters looking something like this: 
+To create a parameter, you will need the parameters looking something like this:
 
 ```
 $source->parameters('parameter-name')->vhost('second_virtual_host')->component('component-name')->create([
@@ -731,7 +740,7 @@ foreach ($items as $item) {
 }
 ```
 
-To create a policy, you will need the parameters looking something like this: 
+To create a policy, you will need the parameters looking something like this:
 
 ```
 $source->policies('name-policy')->vhost('second_virtual_host')->create([
@@ -763,7 +772,7 @@ foreach ($items as $item) {
 }
 ```
 
-Note: the test queue will not be deleted (to to prevent queue churn if this is repeatedly pinged). 
+Note: the test queue will not be deleted (to to prevent queue churn if this is repeatedly pinged).
 
 [Back to TOC](#table-of-contents)
 

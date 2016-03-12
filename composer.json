@@ -1,0 +1,20 @@
+{
+  "name": "rabbitmq-management-api",
+  "description": "A simple object oriented wrapper for the RabbitMQ Management HTTP Api.",
+  "minimum-stability": "stable",
+  "license": "mit",
+  "authors": [
+    {
+      "name": "Dmitry Gavriloff",
+      "email": "info@imega.ru"
+    }
+  ],
+  "require-dev": {
+    "codeception/codeception": "2.1.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Rabman\\": "src/Rabman/"
+    }
+  }
+}
