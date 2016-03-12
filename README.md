@@ -10,7 +10,6 @@ A simple object oriented wrapper for the RabbitMQ Management HTTP Api.
  * [Nodes](#nodes)
  * [Extensions](#extensions)
  * [Definition](#definition)
-
  * [Connections](#connections)
  * [Exchanges](#exchanges)
  * [Queues](#queues)
