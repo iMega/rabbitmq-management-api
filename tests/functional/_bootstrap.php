@@ -1,7 +1,7 @@
 <?php
 
 $rabman = [
-    'base_uri' => 'http://' . getenv('RABBIT_HOST'),
+    'base_uri' => 'http://rabbit-server:15672',
     'default' => [
         'auth' => ['guest', 'guest'],
     ],

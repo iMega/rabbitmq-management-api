@@ -1,5 +1,5 @@
 CONTAINERS = rabbit-server
-RABBIT_HOST = 127.0.0.1:15673
+RABBIT_HOST = 127.0.0.1:15672
 
 stop:
 	@-docker stop $(CONTAINERS)
@@ -20,5 +20,5 @@ test:
 	@docker run --rm \
 		-v $(CURDIR):/data \
 		-w /data \
-		--env="RABBIT_HOST=$(RABBIT_HOST)" \
+		--link rabbit-server:rabbit-server
 		rabman vendor/bin/codecept --debug run functional
