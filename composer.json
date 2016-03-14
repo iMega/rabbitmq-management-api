@@ -1,5 +1,5 @@
 {
-  "name": "rabbitmq-management-api",
+  "name": "imega/rabbitmq-management-api",
   "description": "A simple object oriented wrapper for the RabbitMQ Management HTTP Api.",
   "minimum-stability": "stable",
   "type": "library",
