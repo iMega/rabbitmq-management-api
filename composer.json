@@ -2,11 +2,16 @@
   "name": "rabbitmq-management-api",
   "description": "A simple object oriented wrapper for the RabbitMQ Management HTTP Api.",
   "minimum-stability": "stable",
+  "type": "library",
+  "keywords": ["rabbitmq","management", "api", "guzzle"],
+  "homepage": "https://github.com/iMega/rabbitmq-management-api",
   "license": "mit",
   "authors": [
     {
       "name": "Dmitry Gavriloff",
-      "email": "info@imega.ru"
+      "email": "info@imega.ru",
+      "homepage": "http://imega.club",
+      "role": "Developer"
     }
   ],
   "require-dev": {
@@ -16,5 +21,8 @@
     "psr-4": {
       "Rabman\\": "src/Rabman/"
     }
+  },
+  "require": {
+    "php": ">=5.6.0"
   }
 }
